@@ -23,3 +23,16 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar > .dropdown .dropdown-content {
+  list-style-type: none;
+}
+
+.links {
+  color: green;
+}
