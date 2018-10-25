@@ -44,24 +44,24 @@
 }
 
 .pictures {
-  margin: 0;
-  max-width: 1200px;
+  margin: auto;
+  max-width: 1500px;
   padding: 0 1rem;
-  margin-top: 5rem;
+  margin-top: 1rem;
+  border: 2px solid red;
 }
 
 .responsive-image {
   max-width: 100%;
   transform: rotate(90deg);
-  margin-bottom: 6rem;
-}
-
-.cell img {
+  margin: 5rem 0;
+  border-radius: 10px;
   display: block;
 }
 
 .cell {
   margin: 1rem;
+  border: 1px solid orange;
 }
 
 @media screen and (min-width: 500px) {
@@ -69,6 +69,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    border: 2px solid blue;
   }
 
   .cell {
