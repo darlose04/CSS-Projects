@@ -27,7 +27,16 @@
 .header {
   display: flex;
   justify-content: center;
+  background-color: black;
+  border: 1px solid red;
 }
+
+.fas {
+  color: white;
+  padding: 10px;
+}
+
+
 
 .navbar > .dropdown .dropdown-content {
   list-style-type: none;
