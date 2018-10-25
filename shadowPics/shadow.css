@@ -36,12 +36,31 @@
   padding: 10px;
 }
 
-
-
 .navbar > .dropdown .dropdown-content {
   list-style-type: none;
 }
 
 .links {
   color: green;
+}
+
+.pictures {
+  margin: 0;
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin-top: 5rem;
+}
+
+.responsive-image {
+  max-width: 100%;
+  transform: rotate(90deg);
+  margin-bottom: 6rem;
+}
+
+.cell img {
+  display: block;
+}
+
+.cell {
+  margin: 1rem;
 }
