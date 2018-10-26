@@ -41,6 +41,11 @@
 
 .links {
   color: #fff;
+  text-decoration: none;
+}
+
+.links:hover {
+  text-decoration: underline;
 }
 
 .pictures {
@@ -48,7 +53,7 @@
   max-width: 1500px;
   padding: 0 1rem;
   margin-top: 1rem;
-  border: 2px solid red;
+  /* border: 2px solid red; */ /* for debugging */
 }
 
 .responsive-image {
@@ -61,7 +66,7 @@
 
 .cell {
   margin: 1rem;
-  border: 1px solid orange;
+  /* border: 1px solid orange; */ /* for debugging */
 }
 
 @media screen and (min-width: 500px) {
@@ -69,11 +74,16 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */ /* for debugging */
   }
 
   .cell {
     width: calc(50% - 2rem);
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
   }
 }
 
