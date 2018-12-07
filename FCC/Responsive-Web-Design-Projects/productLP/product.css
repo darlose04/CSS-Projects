@@ -8,11 +8,6 @@
   background-color: coral;
 }
 
-#nav-bar {
-  text-align: left;
-  padding: 10px 0;
-}
-
 .nav-link {
   color: #fff;
   list-style-type: none;
@@ -26,17 +21,22 @@
 
 /* Smaller screens */
 @media screen and (max-width: 699px) {
-  #nav-bar {
+  #header {
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
   }
 
-  #nav-bar ul li {
-    padding-top: 10px;
+  .links {
+    padding: 10px 0 0 0;
   }
 
+  .links li {
+    padding-bottom: 10px;
+  }
+  
   #about {
     margin: 30px;
+    text-align: left;
   }
 
   .video {
@@ -62,20 +62,37 @@
 
 /* Larger screens */
 @media screen and (min-width: 700px) {
-  #nav-bar ul {
-    margin-left: 10%;
-    /* border: 1px solid blue; */
-    
+    #header > div {
+    /* border: 3px solid black; */
+    display: flex;
+  }
+
+  .logo {
+    /* border: solid 1px black; */
+    width: 33.3%;
+    text-align: center;
+    padding: 15px 0;
+    margin-left: 50px;
+  }
+
+  #nav-bar {
+    /* border: 1px solid black; */
+    width: 66.6%;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .links {
-    display: block;
-    /* border: 1px solid black; */
-    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    margin-right: 50px;
+  }
+
+  .links li {
+    list-style-type: none;
+    padding-right: 30px;
+    margin-top: 25px;
   }
   
-  #nav-bar li {
-    display: inline;
-    padding-right: 20px;
-  }
 }
