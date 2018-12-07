@@ -9,7 +9,7 @@
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 22px;
-  border: 12px solid black;
+  /* border: 12px solid black; */
 }
 
 #header {
@@ -61,6 +61,20 @@
   text-decoration: none;
 }
 
+#product-pics {
+  margin: auto;
+  max-width: 1500px;
+  padding: 0 1rem;
+  /* margin-top: 1rem; */
+  border: 5px dotted black;
+}
+
+.responsive-pic {
+  max-width: 100%;
+  margin: 5rem 0;
+  display: block;
+}
+
 /* Smaller screens */
 @media screen and (max-width: 699px) {
   #header {
@@ -99,6 +113,10 @@
 
   .description {
     margin-top: 15px;
+  }
+
+  .cell {
+    margin-bottom: 7rem;
   }
 }
 
