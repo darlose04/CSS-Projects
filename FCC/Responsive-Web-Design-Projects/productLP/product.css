@@ -29,7 +29,7 @@
 }
 
 #about {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   /* display: block; */
 }
 
@@ -66,7 +66,7 @@
   max-width: 1500px;
   padding: 0 1rem;
   /* margin-top: 1rem; */
-  border: 5px dotted black;
+  /* border: 5px dotted black; */
 }
 
 .responsive-pic {
@@ -172,4 +172,23 @@
   .paragraphs {
     width: 640px;
   }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    /* border: 3px solid black; */
+    
+  }
+
+  .cell {
+    display: flex;
+    justify-content: center;
+    width: calc(50% - 2rem);
+    /* border: 2px dotted black; */
+    
+  }
+
+  
 }
