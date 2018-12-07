@@ -36,6 +36,20 @@
   margin-top: 100px;
 }
 
+.disclaimer {
+  font-size: 10px;
+  margin: 20px;
+}
+
+.disclaimer a {
+  text-decoration: none;
+  color: coral;
+}
+
+.disclaimer a:hover {
+  text-decoration: underline;
+}
+
 .video-section {
   margin: 20px;
 }
