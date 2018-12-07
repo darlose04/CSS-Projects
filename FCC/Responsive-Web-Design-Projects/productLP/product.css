@@ -81,13 +81,13 @@
 #contact {
   background: coral;
   padding: 15px 10px;
-}
-
-.contact-info {
   display: flex;
-  justify-content: flex-end;
   color: #fff;
 }
+
+
+
+
 
 /* Smaller screens */
 @media screen and (max-width: 699px) {
@@ -221,5 +221,18 @@
     
   }
 
-  
+  .contact-info {
+    display: flex;
+    justify-content: flex-end;
+    width: 66.6%;
+  }
+
+  .contact-info > div {
+    margin-right: 50px;
+  }
+
+  .address {
+    margin-right: 10px;
+    padding-right: 15px;
+  }
 }
