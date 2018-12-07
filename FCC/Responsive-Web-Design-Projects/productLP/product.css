@@ -14,6 +14,8 @@
 
 #header {
   background-color: coral;
+  position: fixed;
+  width: 100%;
   
 }
 
@@ -31,6 +33,7 @@
 #about {
   /* border: 3px solid black; */
   /* display: block; */
+  margin-top: 100px;
 }
 
 .video-section {
@@ -93,6 +96,7 @@
   #about {
     margin: 30px;
     text-align: left;
+    margin-top: 275px;
   }
 
   .video-section {
