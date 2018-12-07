@@ -78,6 +78,17 @@
   display: block;
 }
 
+#contact {
+  background: coral;
+  padding: 15px 10px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+}
+
 /* Smaller screens */
 @media screen and (max-width: 699px) {
   #header {
@@ -121,6 +132,22 @@
 
   .cell {
     margin-bottom: 7rem;
+  }
+
+  #contact {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .address {
+    margin-bottom: 8px;
   }
 }
 
