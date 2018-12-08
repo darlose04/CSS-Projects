@@ -185,6 +185,15 @@
   .address {
     margin-bottom: 8px;
   }
+
+  #form {
+    padding: 20px;
+  }
+
+  #form .form-group {
+    padding: 10px;
+    margin: auto;
+  }
 }
 
 /* Larger screens */
