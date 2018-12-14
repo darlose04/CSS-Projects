@@ -37,6 +37,10 @@
   font-weight: 600;
 }
 
+.toggleNav {
+  display: none;
+}
+
 #navbar ul {
   /* border: 2px solid orange; */
   padding-inline-start: 0;
@@ -136,5 +140,19 @@
 @media screen and (max-width: 500px) {
   .wrapper {
     display: block;
+  }
+
+  .toggleNav {
+    display: block;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  #navbar ul {
+    display: none;
+  }
+
+  #navbar ul.open {
+    display: flex;
   }
 }
