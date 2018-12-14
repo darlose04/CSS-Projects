@@ -177,7 +177,8 @@
 
   <script>
     $(function() {
-      $('.toggleNav').on('click', function() {
+      let nav = $('.toggleNav');
+      nav.on('click', function() {
         $('#navbar ul').toggleClass('open');
       });
     });
