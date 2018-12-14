@@ -112,6 +112,17 @@
   border-top: 3px solid black;
 }
 
+.main-section code {
+  border: 1px solid red;
+  margin: 10px 0;
+  padding: 10px;
+  background: #749AC8;
+}
+
+
+
+
+
 
 @media screen and (max-width: 500px) {
   .wrapper {
