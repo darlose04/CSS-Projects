@@ -14,6 +14,7 @@
     <nav id="navbar"> <!-- flex item for wrapper --> <!-- also a flex container -->
       <hr>
       <header>Technical Documentation</header>
+      <a href="#" class="toggleNav">☰ Menu</a>
       <ul>
         <hr>
         <li><a class="nav-link" href="#Link_1">Link 1</a></li>
@@ -170,5 +171,16 @@
 
     </main>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <script>
+    $(function() {
+      $('.toggleNav').on('click', function() {
+        $('#navbar ul').toggleClass('open');
+      });
+    });
+  </script>
 </body>
 </html>
