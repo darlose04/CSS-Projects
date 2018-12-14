@@ -16,7 +16,7 @@
   background-image: linear-gradient(to bottom,  #5F656D, #ADB2B8);
   border-top: 3px solid black;
   color: white;
-  /* position: fixed; */
+
   margin-top: 5px;
   margin-left: 5px;
   display: flex;
@@ -69,7 +69,7 @@
 /* Main content styling */
 #main-doc {
   /* border: 2px solid blue; */
-  /* position: absolute; */
+
   display: flex;
   flex-direction: column;
   margin: 0 10px;
@@ -137,6 +137,4 @@
   .wrapper {
     display: block;
   }
-
-  
 }
