@@ -1,22 +1,32 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  background: #E7EAEE;
+  /* background: #E7EAEE; */
   font-family: sans-serif;
 }
 
 .wrapper {
   display: flex;
-  border: 5px solid green;
+  /* border: 5px solid green; */
 }
 
 /* Navbar styling */
 #navbar {
-  border: 5px solid black;
+  /* border: 5px solid black; */
+  background-image: linear-gradient(to bottom,  #5F656D, #ADB2B8);
+  border-top: 3px solid black;
+  color: white;
   /* position: fixed; */
+  margin-top: 5px;
+  margin-left: 5px;
   display: flex;
   flex-direction: column; /* this changes the main and cross axis position */
   justify-content: flex-start;
+}
+
+#navbar hr:first-of-type {
+  border: none;
+  border-top: 3px solid white;
 }
 
 #navbar header { /* flex item */
@@ -30,11 +40,7 @@
 #navbar ul {
   /* border: 2px solid orange; */
   padding-inline-start: 0;
-  
   font-size: 1.5em;
-
-  /* flex: 1; */
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -46,11 +52,12 @@
   width: 100%;
   text-align: center;
   padding: 10px;
+  
 }
 
 #navbar a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 #navbar a:hover {
@@ -71,6 +78,8 @@
 .main-section {
   /* border: 4px solid red; */
   margin: 5px 0;
+  display: flex;
+  flex-direction: column;
   
 }
 
@@ -91,20 +100,24 @@
   padding-left: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .main-section p {
   line-height: 1.2;
   margin: 5px 0;
 }
-
+.main-section ul {
+  list-style-position: outside;
+}
 .main-section li {
   /* border: 2px solid red; */
   list-style: square;
-  width: 95%;
+  margin-left: 20px;
+  width: 90%;
   line-height: 1.2;
   font-size: .95em;
+  
 }
 
 #main-doc hr {
@@ -113,15 +126,11 @@
 }
 
 .main-section code {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 10px 0;
   padding: 10px;
   background: #749AC8;
 }
-
-
-
-
 
 
 @media screen and (max-width: 500px) {
