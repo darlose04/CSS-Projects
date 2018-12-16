@@ -28,6 +28,7 @@
 
 #spreadsheets {
   border: 2px solid blue;
+  display: flex;
 }
 
 @media screen and (max-width: 480px) {
@@ -47,7 +48,7 @@
 
   .nav-ul.open {
     display: flex;
-    
+
   }
 
   #navbar {
@@ -56,6 +57,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .week {
+    border: 3px solid red;
+  }
+
+  .week h2 {
+    border: 1px solid green;
+  }
+
+  .exercises {
+    border: 1px solid red;
+  }  
+
+
+  .results {
+    border: 1px solid black;
   }
 }
 
