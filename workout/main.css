@@ -69,6 +69,9 @@
   .week h2 {
     border: 1px solid green;
     margin: 5px;
+    background-color: #17C429;
+    color: white;
+    padding-left: 5px;
   }
 
   .exercises {
@@ -87,6 +90,10 @@
     border: 1px solid black;
     text-align: center;
     padding: 3px;
+  }
+
+  .date {
+    background-color: #FAECBD;
   }
 }
 
