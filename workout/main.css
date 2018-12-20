@@ -97,6 +97,11 @@
     width: 100%;
   }
 
+  .results input[type="date"] {
+    background: #FAECBD;
+    font-weight: bold;
+  }
+
   th, td {
     border: 1px solid black;
     text-align: center;
