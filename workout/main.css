@@ -111,6 +111,14 @@
   .date {
     background-color: #FAECBD;
   }
+
+  .button {
+    width: 100%;
+    background: #17C429;
+    padding: 5px;
+    color: white;
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 481px) {
