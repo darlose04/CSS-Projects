@@ -25,8 +25,6 @@ function getResults() {
     results = [];
   } else {
     results = JSON.parse(localStorage.getItem("results"));
-  
-    // console.log(results);
 
     // loop through the results array taken from local storage
     for (let h = 0; h <= results.length; h++) {
@@ -44,14 +42,13 @@ function getResults() {
         i++;
       }
 
-      // create a td inside the above tr for every value in rows
+      // create a td inside the above tr for every value in rows (so three tds per tr)
       for (let k = 0; k < rows.length; k++) {
         let td = document.createElement("td");
         td.innerText = rows[k];
         tr.appendChild(td);
       }
 
-      console.log(rows);
       // set counter variable back to 0 and empty rows array
       i = 0;
       rows = [];
