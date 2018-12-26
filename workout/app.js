@@ -2,15 +2,11 @@
 const newRowForm = document.querySelector("#new-row-form");
 const resultsForm = document.querySelector("#result-form");
 const resultsTable = document.querySelector(".results-table");
-const inputs = document.querySelectorAll('input[type="text"]');
-
-// for (let i = 0; i < inputs.length; i++) {
-//   storeResultInLocalStorage(inputs[i].value);
-// }
+// const inputs = document.querySelectorAll('input[type="text"]');
 
 loadEventListeners();
 
-// load all event listeners 
+// load all event listeners
 function loadEventListeners() {
   // add new row event
   newRowForm.addEventListener("submit", addRow);
@@ -33,6 +29,8 @@ function addRow(e) {
 
 // Add results
 function addResult(e) {
+  // create variable for input values
+  const inputs = document.querySelectorAll('input[type="text"]');
   // store in local storage
   for (let i = 0; i < inputs.length; i++) {
     storeResultInLocalStorage(inputs[i].value);
@@ -54,8 +52,3 @@ function storeResultInLocalStorage(result) {
 
   localStorage.setItem("results", JSON.stringify(results));
 }
-
-/*
-
-
-*/
