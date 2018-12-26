@@ -25,36 +25,37 @@ function getResults() {
     results = [];
   } else {
     results = JSON.parse(localStorage.getItem("results"));
-  }
-  // console.log(results);
+  
+    // console.log(results);
 
-  // loop through the results array taken from local storage
-  for (let h = 0; h <= results.length; h++) {
-    // counter variable for while loop
-    let i = 0;
-    let rows = [];
+    // loop through the results array taken from local storage
+    for (let h = 0; h <= results.length; h++) {
+      // counter variable for while loop
+      let i = 0;
+      let rows = [];
 
-    // create tr element to hold tds for row values
-    const tr = document.createElement("tr");
-    resultsTable.appendChild(tr);
+      // create tr element to hold tds for row values
+      const tr = document.createElement("tr");
+      resultsTable.appendChild(tr);
 
-    // use while loop to push every three results values into empty rows array
-    while (i < 3) {
-      rows.push(results.shift());
-      i++;
+      // use while loop to push every three results values into empty rows array
+      while (i < 3) {
+        rows.push(results.shift());
+        i++;
+      }
+
+      // create a td inside the above tr for every value in rows
+      for (let k = 0; k < rows.length; k++) {
+        let td = document.createElement("td");
+        td.innerText = rows[k];
+        tr.appendChild(td);
+      }
+
+      console.log(rows);
+      // set counter variable back to 0 and empty rows array
+      i = 0;
+      rows = [];
     }
-
-    // create a td inside the above tr for every value in rows
-    for (let k = 0; k < rows.length; k++) {
-      let td = document.createElement("td");
-      td.innerText = rows[k];
-      tr.appendChild(td);
-    }
-
-    console.log(rows);
-    // set counter variable back to 0 and empty rows array
-    i = 0;
-    rows = [];
   }
 }
 
