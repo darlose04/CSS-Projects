@@ -8,6 +8,8 @@ loadEventListeners();
 
 // load all event listeners
 function loadEventListeners() {
+  // DOM load event
+  document.addEventListener("DOMContentLoaded", getResults);
   // add new row event
   newRowForm.addEventListener("submit", addRow);
   // add results to local storage
@@ -16,19 +18,16 @@ function loadEventListeners() {
 
 // get results from local storage
 function getResults() {
+  // want to loop through the local storage and apply the values to each td 
+
   let results;
   if (localStorage.getItem("results") === null) {
     results = [];
   } else {
     results = JSON.parse(localStorage.getItem("results"));
+    
   }
-  // create tr element
-  const tr = document.createElement("tr");
-  // add tr html
-  tr.innerHTML =
-    "<td><input type='text'></td><td><input type='text'></td><td><input type='text'></td>";
-  // append tr to tbody parent
-  resultsTable.appendChild(tr);
+  console.log(results);
 }
 
 // add new row to spreadsheet
@@ -40,6 +39,7 @@ function addRow(e) {
     "<td><input type='text'></td><td><input type='text'></td><td><input type='text'></td>";
   // append tr to tbody parent
   resultsTable.appendChild(tr);
+  // storeResultInLocalStorage(tr);
 
   e.preventDefault();
 }
