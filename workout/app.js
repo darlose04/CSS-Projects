@@ -14,6 +14,23 @@ function loadEventListeners() {
   resultsForm.addEventListener("submit", addResult);
 }
 
+// get results from local storage
+function getResults() {
+  let results;
+  if (localStorage.getItem("results") === null) {
+    results = [];
+  } else {
+    results = JSON.parse(localStorage.getItem("results"));
+  }
+  // create tr element
+  const tr = document.createElement("tr");
+  // add tr html
+  tr.innerHTML =
+    "<td><input type='text'></td><td><input type='text'></td><td><input type='text'></td>";
+  // append tr to tbody parent
+  resultsTable.appendChild(tr);
+}
+
 // add new row to spreadsheet
 function addRow(e) {
   // create tr element
