@@ -92,7 +92,7 @@
     border-collapse: collapse;
   }
 
-  .results input {
+  /* .results */ input {
     text-align: center;
     width: 100%;
   }
