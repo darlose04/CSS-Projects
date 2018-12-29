@@ -1,8 +1,7 @@
 // Define UI variables
-const newRowForm = document.querySelector("#new-row");
-const resultsForm = document.querySelector("#results");
+const newRowButton = document.querySelector("#new-row");
+const resultsButton = document.querySelector("#results");
 const resultsTable = document.querySelector(".results-table");
-// const inputs = document.querySelectorAll('input[type="text"]');
 
 loadEventListeners();
 
@@ -11,9 +10,9 @@ function loadEventListeners() {
   // DOM load event
   document.addEventListener("DOMContentLoaded", getResults);
   // add new row event
-  newRowForm.addEventListener("click", addRow);
+  newRowButton.addEventListener("click", addRow);
   // add results to local storage
-  resultsForm.addEventListener("click", addResult);
+  resultsButton.addEventListener("click", addResult);
 }
 
 // get results from local storage
@@ -62,7 +61,7 @@ function addRow(e) {
   const tr = document.createElement("tr");
   // add tr html
   tr.innerHTML =
-    "<td><input type='text'></td><td><input type='text'></td><td><input type='text'></td>";
+    "<td><input class='result-input' type='text'></td><td><input class='result-input' type='text'></td><td><input class='result-input' type='text'></td>";
   // append tr to tbody parent
   resultsTable.appendChild(tr);
 
@@ -72,7 +71,7 @@ function addRow(e) {
 // Add results
 function addResult(e) {
   // create variable for input values
-  const inputs = document.querySelectorAll('input[type="text"]');
+  const inputs = document.querySelectorAll('.result-input');
   // store in local storage
   for (let i = 0; i < inputs.length; i++) {
     storeResultInLocalStorage(inputs[i].value);
