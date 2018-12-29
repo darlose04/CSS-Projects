@@ -83,7 +83,12 @@
 
   .muscle-group {
     background-color: #4682DD;
+  }
+
+  .muscle-group input{
+    background-color: #4682DD;
     color: white;
+    font-weight: bold;
   }
 
   .results {
