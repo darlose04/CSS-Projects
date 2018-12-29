@@ -35,7 +35,7 @@ function getResults() {
       const tr = document.createElement("tr");
       resultsTable.appendChild(tr);
 
-      // use while loop to push every three result values into empty rows array
+      // use while loop and shift() to repeatedly push the first three result values into empty rows array
       while (i < 3) {
         rows.push(results.shift());
         i++;
