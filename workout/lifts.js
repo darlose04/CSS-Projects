@@ -18,6 +18,17 @@ function loadEventListeners() {
   saveLiftsButton.addEventListener("click", saveLift);
 }
 
+function addLift(e) {
+  // create variable for input values
+  const inputs = document.querySelectorAll('.exercise-input');
+  // store in local storage
+  for (let i = 0; i < inputs.length; i++) {
+    storeLiftInLocalStorage(inputs[i].value);
+  }
+
+  e.preventDefault();
+}
+
 function storeLiftInLocalStorage(lift) {
   let lifts;
   if (localStorage.getItem("lifts") === null) {
