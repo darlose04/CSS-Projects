@@ -1,6 +1,6 @@
 // Define UI variables
-const newRowForm = document.querySelector("#new-row-form");
-const resultsForm = document.querySelector("#result-form");
+const newRowForm = document.querySelector("#new-row");
+const resultsForm = document.querySelector("#results");
 const resultsTable = document.querySelector(".results-table");
 // const inputs = document.querySelectorAll('input[type="text"]');
 
@@ -11,9 +11,9 @@ function loadEventListeners() {
   // DOM load event
   document.addEventListener("DOMContentLoaded", getResults);
   // add new row event
-  newRowForm.addEventListener("submit", addRow);
+  newRowForm.addEventListener("click", addRow);
   // add results to local storage
-  resultsForm.addEventListener("submit", addResult);
+  resultsForm.addEventListener("click", addResult);
 }
 
 // get results from local storage
