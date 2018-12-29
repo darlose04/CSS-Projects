@@ -32,7 +32,9 @@
         <table class="exercises" >
           <thead>
             <tr>
-              <th class="muscle-group">A: Chest/Calves</th>
+              <th class="muscle-group"><input type="text"></th>
+              <th><button class="button">New Lift</button></th>
+              <th><button class="button">Save</button></th>
             </tr>
           </thead>
           <thead>
@@ -50,13 +52,9 @@
         <table class="results">
           <thead>
             <tr>
-              <th class="date"><input type="date"></th>
-              <form id="new-row-form">
-                <th><input type="submit" value="New Row" class="button"></th>
-              </form>
-              <form id="result-form">              
-                  <td><input type="submit" value="Save" class="button"></td>                
-              </form>
+              <th class="date"><input type="date"></th>              
+              <th id="new-row"><button class="button">New Row</button></th>
+              <th id="results"><button class="button">Save</button></th>
             </tr>            
           </thead>
           <thead>
@@ -91,6 +89,7 @@
     });
   </script>
 
+  <script src="lifts.js"></script>
   <script src="results.js"></script>
   
 </body>
