@@ -18,6 +18,46 @@ function loadEventListeners() {
   saveLiftsButton.addEventListener("click", saveLift);
 }
 
+// get exercises from local storage
+function getLifts() {
+  // loop through the values in local storage and apply them to each td
+
+  let lifts;
+  if (localStorage.getItem("lifts") === null) {
+    lifts = [];
+  } else {
+    lifts = JSON.parse(localStorage.getItem("lifts"));
+
+    // loop through tje exercises array taken from local storage
+    for (let h = 0; h <= lifts.length; h++) {
+      // counter variable for while loop
+      let i = 0;
+      let rows = [];
+
+      // create tr element to hold tds for row values
+      const tr = document.createElement("tr");
+      exercisesTable.appendChild(tr);
+
+      // use while loop and shift() to repeatedly push the first three exercise values into empty rows array
+      while (i < 3) {
+        rows.push(lifts.shift());
+        i++;
+      }
+
+      // create a td inside the above tr for every value in rows (so three tds per tr)
+      for (let k = 0; k < rows.length; k++) {
+        let td = document.createElement("td");
+        td.innerText = rows[k];
+        tr.appendChild(td);
+      }
+
+      // set counter variable back to 0 and empty the rows array
+      i = 0;
+      rows = [];
+    }
+  }
+}
+
 // add new lift row to spreadsheet
 function addLift(e) {
   // create tr element
