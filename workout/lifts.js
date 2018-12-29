@@ -18,12 +18,23 @@ function loadEventListeners() {
   saveLiftsButton.addEventListener("click", saveLift);
 }
 
+// add new lift row to spreadsheet
+function addLift(e) {
+  // create tr element
+  const tr = document.createElement("tr");
+  // add tr inner html
+  tr.innerHTML =
+    "<td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td>";
+  // append tr to tbody parent
+  exercisesTable.appendChild(tr);
 
+  e.preventDefault();
+}
 
 // save input exercises in local storage
 function saveLift(e) {
   // create variable for input values
-  const inputs = document.querySelectorAll('.exercise-input');
+  const inputs = document.querySelectorAll(".exercise-input");
   // store in local storage
   for (let i = 0; i < inputs.length; i++) {
     storeLiftInLocalStorage(inputs[i].value);
