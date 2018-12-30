@@ -93,3 +93,16 @@ function storeResultInLocalStorage(result) {
 
   localStorage.setItem("results", JSON.stringify(results));
 }
+
+function saveDateInLocalStorage(date) {
+  let dates;
+  if (localStorage.getItem("dates") === null) {
+    dates = [];
+  } else {
+    dates = JSON.parse(localStorage.getitem("dates"));
+  }
+
+  dates.push(date);
+
+  localStorage.setItem("dates", JSON.stringify(dates));
+}
