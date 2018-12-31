@@ -96,6 +96,13 @@ function storeLiftInLocalStorage(lift) {
   localStorage.setItem("lifts", JSON.stringify(lifts));
 }
 
+// add muscle group description and put it in local storage
+function addMuscle(e) {
+  // create variable for muscle group value
+  const muscleGroup = document.querySelector(".muscle-value");
+  storeMuscleInLocalStorage(muscleGroup.value);
+}
+
 // store muscle group description in local storage
 function storeMuscleInLocalStorage(muscle) {
   let muscles;
