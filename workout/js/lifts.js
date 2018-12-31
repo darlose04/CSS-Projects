@@ -58,6 +58,22 @@ function getLifts() {
   }
 }
 
+// get muscle group description from local storage
+function getMuscle() {
+  let muscles;
+  if (localStorage.getItem("muscles") === null) {
+    muscles = [];
+  } else {
+    muscles = JSON.parse(localStorage.getItem("muscles"));
+
+    const muscleGroup = document.querySelector(".muscle-group");
+
+    for (i = 0; i < muscles.length; i++) {
+      muscleGroup.innerText = muscles[i];
+    }
+  }
+}
+
 // add new lift row to spreadsheet
 function addLift(e) {
   // create tr element
