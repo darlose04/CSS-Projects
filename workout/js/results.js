@@ -65,7 +65,7 @@ function getDate() {
     dates = [];
   } else {
     dates = JSON.parse(localStorage.getItem("dates"));
-    
+
     const liftDate = document.querySelector(".date");
 
     for (i = 0; i < dates.length; i++) {
