@@ -1,5 +1,4 @@
 // Define UI variables
-const muscleGroup = document.querySelector(".muscle-group");
 const newLiftButton = document.querySelector("#new-lift");
 const saveLiftsButton = document.querySelector("#save-lifts");
 const exercisesTable = document.querySelector(".exercises-table");
@@ -95,4 +94,18 @@ function storeLiftInLocalStorage(lift) {
   lifts.push(lift);
 
   localStorage.setItem("lifts", JSON.stringify(lifts));
+}
+
+// store muscle group description in local storage
+function storeMuscleInLocalStorage(muscle) {
+  let muscles;
+  if (localStorage.getItem("muscles") === null) {
+    muscles = [];
+  } else {
+    muscles = JSON.parse(localStorage.getItem("muscles"));
+  }
+
+  muscles.push(muscle);
+
+  localStorage.setItem("muscles", JSON.stringify(muscles));
 }
