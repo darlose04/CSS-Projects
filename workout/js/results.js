@@ -9,10 +9,13 @@ loadEventListeners();
 function loadEventListeners() {
   // DOM load event
   document.addEventListener("DOMContentLoaded", getResults);
+  document.addEventListener("DOMContentLoaded", getDate);
   // add new row event
   newRowButton.addEventListener("click", addRow);
   // add results to local storage
   resultsButton.addEventListener("click", addResult);
+  //add date to local storage
+  resultsButton.addEventListener("click", addDate);
 }
 
 // get results from local storage
@@ -51,6 +54,22 @@ function getResults() {
       // set counter variable back to 0 and empty rows array
       i = 0;
       rows = [];
+    }
+  }
+}
+
+// get date from local storage
+function getDate() {
+  let dates;
+  if (localStorage.getItem("dates") === null) {
+    dates = [];
+  } else {
+    dates = JSON.parse(localStorage.getItem("dates"));
+    
+    const liftDate = document.querySelector(".date");
+
+    for (i = 0; i < dates.length; i++) {
+      liftDate.innerText = dates[i];
     }
   }
 }
