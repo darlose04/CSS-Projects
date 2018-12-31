@@ -9,12 +9,13 @@ loadEventListeners();
 function loadEventListeners() {
   // DOM load event
   document.addEventListener("DOMContentLoaded", getLifts);
-  // add/save muscle group ...
-
+  document.addEventListener("DOMContentLoaded", getMuscle);
   // add new lift event
   newLiftButton.addEventListener("click", addLift);
   // add lifts to local storage event
   saveLiftsButton.addEventListener("click", saveLift);
+  // add muscle group description to local storage
+  saveLiftsButton.addEventListener("click", addMuscle);
 }
 
 // get exercises from local storage
