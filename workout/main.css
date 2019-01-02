@@ -75,10 +75,16 @@
     padding-left: 5px;
   }
 
+  .day {
+    /* border: 2px solid black; */
+    margin: 5px;
+  }
+
   .exercises {
     /* border: 1px solid red; */
-    margin: 5px;
+    
     border-collapse: collapse;
+    width: 100%;
   }  
 
   .muscle-group {
@@ -94,7 +100,8 @@
 
   .results {
     /* border: 1px solid black; */
-    margin: 5px;
+    margin-top: 5px;
+    width: 100%;
     border-collapse: collapse;
   }
 
