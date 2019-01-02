@@ -118,6 +118,8 @@ function addMuscle(e) {
   // create variable for muscle group value
   const muscleGroup = document.querySelector(".muscle-value");
   storeMuscleInLocalStorage(muscleGroup.value);
+
+  e.preventDefault();
 }
 
 // store muscle group description in local storage
