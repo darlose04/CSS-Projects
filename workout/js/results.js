@@ -1,7 +1,7 @@
 // Define UI variables
-const newRowButton = document.querySelector("#new-row");
-const resultsButton = document.querySelector("#results");
-const resultsTable = document.querySelector(".results-table");
+let newRowButton = document.querySelector("#new-row");
+let resultsButton = document.querySelector("#results");
+let resultsTable = document.querySelector(".results-table");
 
 loadEventListeners();
 
