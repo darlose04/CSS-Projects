@@ -1,7 +1,7 @@
 // Define UI variables
-const newLiftButton = document.querySelector("#new-lift");
-const saveLiftsButton = document.querySelector("#save-lifts");
-const exercisesTable = document.querySelector(".exercises-table");
+let newLiftButton = document.querySelector(".new-lift");
+let saveLiftsButton = document.querySelector(".save-lifts");
+let exercisesTable = document.querySelector(".exercises-table");
 
 loadEventListeners();
 
@@ -11,7 +11,9 @@ function loadEventListeners() {
   document.addEventListener("DOMContentLoaded", getLifts);
   document.addEventListener("DOMContentLoaded", getMuscle);
   // add new lift event
+  
   newLiftButton.addEventListener("click", addLift);
+  
   // add lifts to local storage event
   saveLiftsButton.addEventListener("click", saveLift);
   // add muscle group description to local storage
@@ -28,7 +30,7 @@ function getLifts() {
   } else {
     lifts = JSON.parse(localStorage.getItem("lifts"));
 
-    // loop through tje exercises array taken from local storage
+    // loop through the exercises array taken from local storage
     for (let h = 0; h <= lifts.length; h++) {
       // counter variable for while loop
       let i = 0;
@@ -76,16 +78,19 @@ function getMuscle() {
 
 // add new lift row to spreadsheet
 function addLift(e) {
+  // need to loop through and do this for every button on the page that will add a lift row
+  
+  
   // create tr element
-  const tr = document.createElement("tr");
+  let tr = document.createElement("tr");
   // add tr inner html
-  tr.innerHTML =
-    "<td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td>";
+  tr.innerHTML = "<td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td>";
   // append tr to tbody parent
   exercisesTable.appendChild(tr);
-
+   
   e.preventDefault();
 }
+
 
 // save input exercises in local storage
 function saveLift(e) {
