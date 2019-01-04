@@ -75,6 +75,11 @@
     padding-left: 5px;
   }
 
+  .add {
+    /* border: 1px solid black; */
+    margin: 5px;
+  }
+
   .day {
     /* border: 2px solid black; */
     margin: 5px;
