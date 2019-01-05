@@ -9,6 +9,7 @@ function loadEventListeners() {
   newDayButton.addEventListener('click', addNewDay);
 }
 
+// adds new exercises and results tables to page
 function addNewDay(e) {
   // create div element
   let div = document.createElement("div");
@@ -19,4 +20,6 @@ function addNewDay(e) {
 
   // append div to div.week
   weekDiv.appendChild(div);
+
+  e.preventDefault();
 }
