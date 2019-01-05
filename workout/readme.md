@@ -4,4 +4,13 @@ This web application uses HTML, CSS, and JavaScript (and a bit of jQuery for the
 
 It is currently only styled for mobile (max-width: 480px). 
 
-Adding a useless edit to check things.
+Notes: 
+	Am going to use the 'Add New Day' button to add new tables containing the exercises and 
+results classes. 
+	Also, when I save the table values to local storage, on reloading the page the buttons will 
+disappear and will be added to the new tables when the 'Add New Day' button is clicked. This is 
+because when I have the same buttons in multiple tables, I can't figure out a way for all of them to 
+work for their respective table. Only the first tables buttons work. If I use querySelectorAll it 
+creates a NodeList and looping through the buttons with that only makes the last set of buttons 
+work. So if I remove the buttons after saving, hopefully they will work with the newly created 
+tables.
