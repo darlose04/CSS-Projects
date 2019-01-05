@@ -21,7 +21,6 @@ function loadEventListeners() {
 // get results from local storage
 function getResults() {
   // want to loop through the local storage and apply the values to each td
-
   let results;
   if (localStorage.getItem("results") === null) {
     results = [];
@@ -68,7 +67,7 @@ function getDate() {
 
     const liftDate = document.querySelector(".date");
 
-    for (i = 0; i < dates.length; i++) {
+    for (let i = 0; i < dates.length; i++) {
       liftDate.innerText = dates[i];
     }
   }
@@ -87,7 +86,7 @@ function addRow(e) {
   e.preventDefault();
 }
 
-// Add results
+// Add results to local storage
 function addResult(e) {
   // create variable for input values
   const inputs = document.querySelectorAll('.result-input');
