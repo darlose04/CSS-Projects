@@ -19,4 +19,4 @@ tables.
 *	Encountered an issue where the js is throwing an error with the code for the exercise and result table buttons... Since the 'Add New Day' button adds the html that the results.js and lifts.js files are dependent upon, there is an error where the js functions are being loaded without the necessary html already loaded on the page.
 * To fix this, I think I will need to load the js files when I click the button. Not sure how to do that though. 
 * Possibly include the script tags in the innerHTML of the addNewDay div
-* Possibly export the functions from the lifts.js and results.js files and have them loaded on the app.js file with some sort of click event
+* Possibly export the functions from the lifts.js and results.js files and have them loaded on the app.js file with some sort of click event. (This won't work because require() does not exist on the client side)
