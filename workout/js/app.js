@@ -6,7 +6,7 @@ loadEventListeners();
 
 function loadEventListeners() {
   // add new day tables
-  newDayButton.addEventListener('click', () => {
+  newDayButton.addEventListener("click", () => {
     addNewDay();
     liftsJS();
     resultsJS();
@@ -16,7 +16,6 @@ function loadEventListeners() {
 // get tables from local storage
 function getDays() {
   let days;
-
 }
 
 // adds new exercises and results tables to page
@@ -26,12 +25,25 @@ function addNewDay(e) {
   // add class
   div.className = "day";
   // add div innerHTML
-  div.innerHTML = '<table class="exercises"><thead><tr><th class="muscle-group"><input class="muscle-value" type="text"></th><th class="new-lift"><button class="button">New Lift</button></th><th class="save-lifts"><button class="button">Save</button></th></tr></thead><thead><tr><th>Exercises</th><th>Sets</th><th>Reps</th></tr></thead><tbody class="exercises-table"></tbody></table><table class="results"><thead><tr><th class="date"><input type="date"></th><th id="new-row"><button class="button">New Row</button></th><th id="results"><button class="button">Save</button></th></tr></thead><thead><tr><th>Weight</th><th>Sets</th><th>Reps</th></tr></thead><tbody class="results-table"></tbody></table>'
+  div.innerHTML =
+    '<table class="exercises"><thead><tr><th class="muscle-group"><input class="muscle-value" type="text"></th><th class="new-lift"><button class="button">New Lift</button></th><th class="save-lifts"><button class="button">Save</button></th></tr></thead><thead><tr><th>Exercises</th><th>Sets</th><th>Reps</th></tr></thead><tbody class="exercises-table"></tbody></table><table class="results"><thead><tr><th class="date"><input type="date"></th><th id="new-row"><button class="button">New Row</button></th><th id="results"><button class="button">Save</button></th></tr></thead><thead><tr><th>Weight</th><th>Sets</th><th>Reps</th></tr></thead><tbody class="results-table"></tbody></table>';
 
   // append div to div.week
   weekDiv.appendChild(div);
 
   // e.preventDefault();
+}
+
+function addDay(e) {
+  // create var for day value (the html tables)
+  let div = document.createElement("div");
+  // add class
+  div.className = "day";
+  // add div innerHTML
+  div.innerHTML =
+    '<table class="exercises"><thead><tr><th class="muscle-group"><input class="muscle-value" type="text"></th><th class="new-lift"><button class="button">New Lift</button></th><th class="save-lifts"><button class="button">Save</button></th></tr></thead><thead><tr><th>Exercises</th><th>Sets</th><th>Reps</th></tr></thead><tbody class="exercises-table"></tbody></table><table class="results"><thead><tr><th class="date"><input type="date"></th><th id="new-row"><button class="button">New Row</button></th><th id="results"><button class="button">Save</button></th></tr></thead><thead><tr><th>Weight</th><th>Sets</th><th>Reps</th></tr></thead><tbody class="results-table"></tbody></table>';
+  
+  saveDaysInLocalStorage(div.innerHTML);
 }
 
 // save the days in local storage
@@ -133,17 +145,16 @@ function liftsJS() {
   function addLift(e) {
     // need to loop through and do this for every button on the page that will add a lift row
 
-
     // create tr element
     let tr = document.createElement("tr");
     // add tr inner html
-    tr.innerHTML = "<td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td>";
+    tr.innerHTML =
+      "<td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td>";
     // append tr to tbody parent
     exercisesTable.appendChild(tr);
 
     e.preventDefault();
   }
-
 
   // save input exercises in local storage
   function saveLift(e) {
@@ -289,7 +300,7 @@ function resultsJS() {
   // Add results
   function addResult(e) {
     // create variable for input values
-    const inputs = document.querySelectorAll('.result-input');
+    const inputs = document.querySelectorAll(".result-input");
     // store in local storage
     for (let i = 0; i < inputs.length; i++) {
       storeResultInLocalStorage(inputs[i].value);
