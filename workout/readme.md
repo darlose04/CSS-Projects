@@ -22,3 +22,6 @@ tables.
 * Possibly export the functions from the lifts.js and results.js files and have them loaded on the app.js file with some sort of click event. (This won't work because require() does not exist on the client side)
 * I figured out a way to make it work: I created two new functions in app.js, then copied all the code from lifts.js and results.js into the functions. Then I called the functions in the newDay button event listener.
 * Still need to retrieve the tables from local storage though
+
+* Plenty of problems now: Can save the tables in local storage and retrieve them, but then the saved table values aren't retrieved and displayed. 
+* Also, when displaying retrieved tables, I removed the buttons so they would work on a newly added table. This worked, except when adding new rows the rows were added on the previous (original) table. I think removing the classes from the saved tables when displaying them from local storage may fix this.
