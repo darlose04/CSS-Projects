@@ -20,3 +20,5 @@ tables.
 * To fix this, I think I will need to load the js files when I click the button. Not sure how to do that though. 
 * Possibly include the script tags in the innerHTML of the addNewDay div
 * Possibly export the functions from the lifts.js and results.js files and have them loaded on the app.js file with some sort of click event. (This won't work because require() does not exist on the client side)
+* I figured out a way to make it work: I created two new functions in app.js, then copied all the code from lifts.js and results.js into the functions. Then I called the functions in the newDay button event listener.
+* Still need to retrieve the tables from local storage though
