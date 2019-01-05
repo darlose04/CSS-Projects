@@ -6,7 +6,7 @@ loadEventListeners();
 
 function loadEventListeners() {
   // add new day tables
-  document.addEventListener('click', addNewDay);
+  newDayButton.addEventListener('click', addNewDay);
 }
 
 function addNewDay(e) {
