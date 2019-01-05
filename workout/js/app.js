@@ -13,6 +13,12 @@ function loadEventListeners() {
   });
 }
 
+// get tables from local storage
+function getDays() {
+  let days;
+
+}
+
 // adds new exercises and results tables to page
 function addNewDay(e) {
   // create div element
@@ -27,6 +33,22 @@ function addNewDay(e) {
 
   // e.preventDefault();
 }
+
+// save the days in local storage
+function saveDaysInLocalStorage(day) {
+  let days;
+  if (localStorage.getitem("days") === null) {
+    days = [];
+  } else {
+    days = JSON.parse(localStorage.getItem("days"));
+  }
+
+  days.push(day);
+
+  localStorage.setItem("days", JSON.stringify(days));
+}
+
+// This function contains the code for the exercises table
 
 function liftsJS() {
   // Define UI variables
@@ -173,6 +195,7 @@ function liftsJS() {
   }
 }
 
+// this function contains the code for the results table
 function resultsJS() {
   // Define UI variables
   let newRowButton = document.querySelector("#new-row");
@@ -311,5 +334,4 @@ function resultsJS() {
 
     localStorage.setItem("dates", JSON.stringify(dates));
   }
-
 }
