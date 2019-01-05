@@ -14,3 +14,4 @@ work for their respective table. Only the first tables buttons work. If I use qu
 creates a NodeList and looping through the buttons with that only makes the last set of buttons 
 work. So if I remove the buttons after saving, hopefully they will work with the newly created 
 tables.
+	I am also going to try and create new JS files which will refactor the code into OOP, which may help to clean it up some. 
