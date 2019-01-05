@@ -6,12 +6,16 @@ let weekDiv = document.querySelector(".week");
 loadEventListeners();
 
 function loadEventListeners() {
+  // DOM load event
+  document.addEventListener("DOMContentLoaded", getDays);
   // add new day tables
   newDayButton.addEventListener("click", () => {
     addNewDay();
     liftsJS();
     resultsJS();
   });
+  // save day in local storage
+  saveDayButton.addEventListener("click", addDay);
 }
 
 // get tables from local storage
@@ -50,7 +54,7 @@ function addDay(e) {
 // save the days in local storage
 function saveDaysInLocalStorage(day) {
   let days;
-  if (localStorage.getitem("days") === null) {
+  if (localStorage.getItem("days") === null) {
     days = [];
   } else {
     days = JSON.parse(localStorage.getItem("days"));
