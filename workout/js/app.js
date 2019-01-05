@@ -1,5 +1,6 @@
 // Define UI variables
 let newDayButton = document.querySelector(".new-day");
+let saveDayButton = document.querySelector(".save-day");
 let weekDiv = document.querySelector(".week");
 
 loadEventListeners();
