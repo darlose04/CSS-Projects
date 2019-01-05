@@ -4,14 +4,19 @@ This web application uses HTML, CSS, and JavaScript (and a bit of jQuery for the
 
 It is currently only styled for mobile (max-width: 480px). 
 
-Notes: 
-	Am going to use the 'Add New Day' button to add new tables containing the exercises and 
+### Notes: 
+* Am going to use the 'Add New Day' button to add new tables containing the exercises and 
 results classes. 
-	Also, when I save the table values to local storage, on reloading the page the buttons will 
+*	Also, when I save the table values to local storage, on reloading the page the buttons will 
 disappear and will be added to the new tables when the 'Add New Day' button is clicked. This is 
 because when I have the same buttons in multiple tables, I can't figure out a way for all of them to 
 work for their respective table. Only the first tables buttons work. If I use querySelectorAll it 
 creates a NodeList and looping through the buttons with that only makes the last set of buttons 
 work. So if I remove the buttons after saving, hopefully they will work with the newly created 
 tables.
-	I am also going to try and create new JS files which will refactor the code into OOP, which may help to clean it up some. 
+*	I am also going to try and create new JS files which will refactor the code into OOP, which may help to clean it up some. 
+
+*	Encountered an issue where the js is throwing an error with the code for the exercise and result table buttons... Since the 'Add New Day' button adds the html that the results.js and lifts.js files are dependent upon, there is an error where the js functions are being loaded without the necessary html already loaded on the page.
+* To fix this, I think I will need to load the js files when I click the button. Not sure how to do that though. 
+* Possibly include the script tags in the innerHTML of the addNewDay div
+* Possibly export the functions from the lifts.js and results.js files and have them loaded on the app.js file with some sort of click event
