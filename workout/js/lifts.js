@@ -70,7 +70,7 @@ function getMuscle() {
 
     const muscleGroup = document.querySelector(".muscle-group");
 
-    for (i = 0; i < muscles.length; i++) {
+    for (let i = 0; i < muscles.length; i++) {
       muscleGroup.innerText = muscles[i];
     }
   }
