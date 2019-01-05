@@ -21,6 +21,18 @@ function loadEventListeners() {
 // get tables from local storage
 function getDays() {
   let days;
+  if (localStorage.getItem("days") === null) {
+    days = [];
+  } else {
+    days = JSON.parse(localStorage.getItem("days"));
+
+    let div = document.createElement("div");
+    div.className = "day"
+    for (let i = 0; i < days.length; i++) {
+      div.innerHTML = days[i];
+      weekDiv.appendChild(div);
+    }
+  }
 }
 
 // adds new exercises and results tables to page
@@ -140,7 +152,7 @@ function liftsJS() {
 
       const muscleGroup = document.querySelector(".muscle-group");
 
-      for (i = 0; i < muscles.length; i++) {
+      for (let i = 0; i < muscles.length; i++) {
         muscleGroup.innerText = muscles[i];
       }
     }
@@ -283,7 +295,7 @@ function resultsJS() {
 
       const liftDate = document.querySelector(".date");
 
-      for (i = 0; i < dates.length; i++) {
+      for (let i = 0; i < dates.length; i++) {
         liftDate.innerText = dates[i];
       }
     }
