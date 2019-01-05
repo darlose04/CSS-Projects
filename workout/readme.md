@@ -25,3 +25,5 @@ tables.
 
 * Plenty of problems now: Can save the tables in local storage and retrieve them, but then the saved table values aren't retrieved and displayed. 
 * Also, when displaying retrieved tables, I removed the buttons so they would work on a newly added table. This worked, except when adding new rows the rows were added on the previous (original) table. I think removing the classes from the saved tables when displaying them from local storage may fix this.
+
+* want to keep this workout project in this repository, but am going to move the other projects to a new repository. Just so the workout app is by itself with it's commit history. Don't care as much about the commit history of the other projects
