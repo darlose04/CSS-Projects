@@ -230,7 +230,7 @@ function resultsJS() {
   let resultsTable = document.querySelector(".results-table");
 
   loadEventListeners();
-
+  
   // load all event listeners
   function loadEventListeners() {
     // DOM load event
@@ -354,7 +354,7 @@ function resultsJS() {
     if (localStorage.getItem("dates") === null) {
       dates = [];
     } else {
-      dates = JSON.parse(localStorage.getitem("dates"));
+      dates = JSON.parse(localStorage.getItem("dates"));
     }
 
     dates.push(date);
