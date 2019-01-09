@@ -29,3 +29,17 @@ tables.
 * want to keep this workout project in this repository, but am going to move the other projects to a new repository. Just so the workout app is by itself with it's commit history. Don't care as much about the commit history of the other projects
 
 * ran into another problem, which may not actually matter. But, if I add new rows after already having saved table content, the muscles group gets replaced by a blank box. I think this is because I'm re-saving the table and not input-ing a new value in the muscle group box (because the input box is removed after reloading).
+
+### Steps of how I think the app should work
+
+1. Add New Day: clicking the 'Add New Day' button will create two new tables; one for the muscle group and lifts (lift name, number of sets, and number of reps); the other for the date and results (weight, sets, reps). (This is done so far)
+
+2. Adding rows to the tables and then inputing data into the rows. (this is working)
+
+3. Saving the data from the spreadsheets to local storage (this is working)
+
+4. Saving the days to local storage (this sort of works. it saves the day, but doesn't save the table data). Potential solution: The html code for the day buttons is not including the rows from the tables, which may explain why the rows are not being shown upon the page being reloaded. need to figure out a way to do that. The table data is saved separately, so it may all need to be saved together in order to show up when reloaded.
+
+5. Reloading the page and having the tables show up with the proper information within them. (this is not working). Sort of explained in above point.
+
+6. Adding a new day and having everything work the same way, only with new tables and data. Repeat this process as needed.
