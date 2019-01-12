@@ -16,7 +16,11 @@ let resultsTable = document.querySelector(".results-table");
 // Event Listeners
 loadEventListeners();
 
-function loadEventListeners() {}
+function loadEventListeners() {
+  newDayButton.addEventListener("click", () => {
+    addNewDay();
+  });
+}
 
 // add new exercises and results tables to page
 function addNewDay(e) {
