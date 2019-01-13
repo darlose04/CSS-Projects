@@ -30,6 +30,20 @@ function addNewDay(e) {
   // e.preventDefault();
 }
 
+// save the days in local storage
+function saveDaysInLocalStorage(day) {
+  let days;
+  if (localStorage.getItem("days") === null) {
+    days = [];
+  } else {
+    days = JSON.parse(localStorage.getItem("days"));
+  }
+
+  days.push(day);
+
+  localStorage.setItem("days", JSON.stringify(days));
+}
+
 /*
 Function that contains all the JS for the table buttons. Need to do this in order to 
 prevent JS errors when clicking 'Add New Day' button. Otherwise, the JS loads before the
@@ -82,4 +96,3 @@ function tables() {
     e.preventDefault();
   }
 }
-
