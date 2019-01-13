@@ -45,6 +45,7 @@ function tables() {
   let newRowButton = document.querySelector(".new-row");
   let resultsButton = document.querySelector(".results");
   let resultsTable = document.querySelector(".results-table");
+
   // load event listeners for table buttons
   loadTableEventListeners();
 
@@ -52,6 +53,7 @@ function tables() {
   function loadTableEventListeners() {
     // add new row to exercises table
     newLiftButton.addEventListener("click", addLift);
+    newRowButton.addEventListener("click", addRow);
   }
 
   // add new lift row to table.exercises
@@ -63,6 +65,19 @@ function tables() {
       "<td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td>";
     // append tr to tbody parent (exercises table)
     exercisesTable.appendChild(tr);
+
+    e.preventDefault();
+  }
+
+  // add new results row to table.results
+  function addRow(e) {
+    // create tr element
+    const tr = document.createElement("tr");
+    // add tr inner html
+    tr.innerHTML =
+      "<td><input class='result-input' type='text'></td><td><input class='result-input' type='text'></td><td><input class='result-input' type='text'></td>";
+    // append tr to tbody parent
+    resultsTable.appendChild(tr);
 
     e.preventDefault();
   }
