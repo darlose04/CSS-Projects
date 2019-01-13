@@ -17,12 +17,13 @@ let resultsTable = document.querySelector(".results-table");
 loadEventListeners();
 
 function loadEventListeners() {
+  // adds new tables to page with click of button
   newDayButton.addEventListener("click", () => {
     addNewDay();
   });
 }
 
-// add new exercises and results tables to page
+// add new exercises and results tables to page  (through event listener click)
 function addNewDay(e) {
   // create div element
   let div = document.createElement("div");
@@ -35,5 +36,18 @@ function addNewDay(e) {
   // append div to div.week
   weekDiv.appendChild(div);
 
-  // e.preventDefault();
+  e.preventDefault();
+}
+
+// add new lift row to table.exercises
+function addLift(e) {
+  // create tr element
+  let tr = document.createElement("tr");
+  // add tr inner html
+  tr.innerHTML =
+    "<td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td><td><input class='exercise-input' type='text'></td>";
+  // append tr to tbody parent (exercises table)
+  exercisesTable.appendChild(tr);
+
+  e.preventDefault();
 }
