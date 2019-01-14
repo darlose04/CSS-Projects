@@ -194,6 +194,15 @@ function tables() {
     e.preventDefault();
   }
 
+  // add date and put it in local storage
+  function addDate(e) {
+    // create variable for date value
+    const liftDate = document.querySelector("input[type='date']");
+    saveDateInLocalStorage(liftDate.value);
+
+    e.preventDefault();
+  }
+
   // save the date of the workout in local storage
   function saveDateInLocalStorage(date) {
     let dates;
