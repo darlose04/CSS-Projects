@@ -118,6 +118,32 @@ function tables() {
     e.preventDefault();
   }
 
+  // save inputs in exercises/lift table to local storage
+  function saveLift(e) {
+    // create variable for input values
+    const inputs = document.querySelectorAll(".exercise-input");
+    // store in local storage
+    for (let i = 0; i < inputs.length; i++) {
+      storeLiftInLocalStorage(inputs[i].value);
+    }
+
+    e.preventDefault();
+  }
+
+  // store lifts in local storage
+  function storeLiftInLocalStorage(lift) {
+    let lifts;
+    if (localStorage.getItem("lifts") === null) {
+      lifts = [];
+    } else {
+      lifts = JSON.parse(localStorage.getItem("lifts"));
+    }
+
+    lifts.push(lift);
+
+    localStorage.setItem("lifts", JSON.stringify(lifts));
+  }
+
   // add new results row to table.results
   function addRow(e) {
     // create tr element
