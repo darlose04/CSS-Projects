@@ -12,6 +12,8 @@ function loadEventListeners() {
     addNewDay();
     tables();
   });
+
+  saveDayButton.addEventListener("click", putDayInLocalStorage);
 }
 
 // add new exercises and results tables to page  (through event listener click)
@@ -28,6 +30,21 @@ function addNewDay(e) {
   weekDiv.appendChild(div);
 
   // e.preventDefault();
+}
+
+// this function actually puts the day in local storage when the 'Save Day' button is clicked
+function putDayInLocalStorage(e) {
+  /*
+  //create var for day value (the html table)
+  let div = document.createElement("div");
+  // add class name
+  div.className = "day";
+  // add div inner html
+  div.innerHTML =
+    '<table class="exercises"><thead><tr><th class="muscle-group"><input class="muscle-value" type="text"></th></tr></thead><thead><tr><th>Exercises</th><th>Sets</th><th>Reps</th></tr></thead><tbody class="exercises-table"></tbody></table><table class="results"><thead><tr><th class="date"><input type="date"></th></tr></thead><thead><tr><th>Weight</th><th>Sets</th><th>Reps</th></tr></thead><tbody class="results-table"><tr><td><input class="exercise-input" type="text"></td><td><input class="exercise-input" type="text"></td><td><input class="exercise-input" type="text"></td></tr></tbody></table>';
+
+  saveDaysInLocalStorage(div.innerHTML);
+  */
 }
 
 // save the days in local storage
