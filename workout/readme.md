@@ -4,32 +4,6 @@ This web application uses HTML, CSS, and JavaScript (and a bit of jQuery for the
 
 It is currently only styled for mobile (max-width: 480px). 
 
-### Notes: 
-* Am going to use the 'Add New Day' button to add new tables containing the exercises and 
-results classes. 
-*	Also, when I save the table values to local storage, on reloading the page the buttons will 
-disappear and will be added to the new tables when the 'Add New Day' button is clicked. This is 
-because when I have the same buttons in multiple tables, I can't figure out a way for all of them to 
-work for their respective table. Only the first tables buttons work. If I use querySelectorAll it 
-creates a NodeList and looping through the buttons with that only makes the last set of buttons 
-work. So if I remove the buttons after saving, hopefully they will work with the newly created 
-tables.
-*	I am also going to try and create new JS files which will refactor the code into OOP, which may help to clean it up some. 
-
-*	Encountered an issue where the js is throwing an error with the code for the exercise and result table buttons... Since the 'Add New Day' button adds the html that the results.js and lifts.js files are dependent upon, there is an error where the js functions are being loaded without the necessary html already loaded on the page.
-* To fix this, I think I will need to load the js files when I click the button. Not sure how to do that though. 
-* Possibly include the script tags in the innerHTML of the addNewDay div
-* Possibly export the functions from the lifts.js and results.js files and have them loaded on the app.js file with some sort of click event. (This won't work because require() does not exist on the client side)
-* I figured out a way to make it work: I created two new functions in app.js, then copied all the code from lifts.js and results.js into the functions. Then I called the functions in the newDay button event listener.
-* Still need to retrieve the tables from local storage though
-
-* Plenty of problems now: Can save the tables in local storage and retrieve them, but then the saved table values aren't retrieved and displayed. 
-* Also, when displaying retrieved tables, I removed the buttons so they would work on a newly added table. This worked, except when adding new rows the rows were added on the previous (original) table. I think removing the classes from the saved tables when displaying them from local storage may fix this.
-
-* want to keep this workout project in this repository, but am going to move the other projects to a new repository. Just so the workout app is by itself with it's commit history. Don't care as much about the commit history of the other projects
-
-* ran into another problem, which may not actually matter. But, if I add new rows after already having saved table content, the muscles group gets replaced by a blank box. I think this is because I'm re-saving the table and not input-ing a new value in the muscle group box (because the input box is removed after reloading).
-
 ### Steps of how I think the app should work
 
 1. Add New Day: clicking the 'Add New Day' button will create two new tables; one for the muscle group and lifts (lift name, number of sets, and number of reps); the other for the date and results (weight, sets, reps). (This is done so far)
@@ -38,8 +12,20 @@ tables.
 
 3. Saving the data from the spreadsheets to local storage (this is working)
 
-4. Saving the days to local storage (this sort of works. it saves the day, but doesn't save the table data). Potential solution: The html code for the day buttons is not including the rows from the tables, which may explain why the rows are not being shown upon the page being reloaded. need to figure out a way to do that. The table data is saved separately, so it may all need to be saved together in order to show up when reloaded.
+4. Saving the days to local storage. (the days are being saved, but am having trouble reloading the data within the tables)
 
 5. Reloading the page and having the tables show up with the proper information within them. (this is not working). Sort of explained in above point.
 
-6. Adding a new day and having everything work the same way, only with new tables and data. Repeat this process as needed.
+6. Adding a new day and having everything work the same way, only with new tables and data. Repeat this process as needed. (obviously this is not working properly)
+
+### Notes: 
+* So far I am able to add a new day which adds two tables, the exercises table and the results table. I am also able to save the days to local storage and then retrieve them when the page reloads.
+
+* I can add new rows to a newly added table. When the day is saved and the page is reloaded, I am able to add a new day and repeat the process to add rows to the new table. 
+
+* I can save the table inputs to local storage. A caveat: on the third attempt to save the muscle group description and the date, only an empty string gets saved to local storage. **No idea why this is happening.**  There is no issue of empty strings being added when saving input data from the tbody of the table (this refers to the exercises, sets, reps, weight sets, reps). There is also no issue when adding more than two days to local storage. Only the muscle group and date inputs have trouble with adding empty strings. 
+
+* When reloading the page after saving the input information as well as saving the day to local storage, there are some issues: 
+  1. For the first day, there is no problem getting the muscle group description and date to display upon reloading the page. But when attempting to do this with a second day, the information does not display. The day table itself shows up, but the muscle group description and date fields are still inputs rather than just text in a box like the first day's display. I think I need to figure out some way to loop through the local storage array in order for this to display properly. It may also need a change to the html code (class names?) so that the JS isn't referencing the wrong elements.
+
+  2. The input from the actual tbody rows just doesn't show up. I haven't looked too much into this yet though. I'm thinking I'll have to loop through each set of three values (since there are three columns) and append them to the tbody element. I did this successfully before with an earlier version of the app, but I will need to rework the code for it to work with the new/save day functions.
