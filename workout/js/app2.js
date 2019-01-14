@@ -100,6 +100,7 @@ function tables() {
 
   // event listeners for buttons in tables
   function loadTableEventListeners() {
+    // EVENT LISTENERS FOR EXERCISES/LIFTS TABLE
     // add new row to exercises table
     newLiftButton.addEventListener("click", addLift);
     // save lifts inputs in local storage
@@ -107,8 +108,13 @@ function tables() {
     // save muscle group description in local storage
     saveLiftsButton.addEventListener("click", addMuscle);
 
+    // EVENT LISTENERS FOR RESULTS TABLE
     // add new row to results table
     newRowButton.addEventListener("click", addRow);
+    // save results in local storage
+    resultsButton.addEventListener("click", addResult);
+    // save date in local storage
+    resultsButton.addEventListener("click", addDate);
   }
 
   // ==================================================================================
