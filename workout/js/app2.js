@@ -42,7 +42,7 @@ function addNewDay(e) {
   div.className = "day";
   // add div innerHTML
   div.innerHTML =
-    '<table class="exercises"><thead><tr><th class="muscle-group"><input class="muscle-value" type="text"></th><th class="new-lift"><button class="button">New Lift</button></th><th class="save-lifts"><button class="button">Save</button></th></tr></thead><thead><tr><th>Exercises</th><th>Sets</th><th>Reps</th></tr></thead><tbody class="exercises-table"></tbody></table><table class="results"><thead><tr><th class="date"><input type="date"></th><th class="new-row"><button class="button">New Row</button></th><th class="results"><button class="button">Save</button></th></tr></thead><thead><tr><th>Weight</th><th>Sets</th><th>Reps</th></tr></thead><tbody class="results-table"></tbody></table>';
+    '<table class="exercises"><thead><tr><th class="muscle-group"><input class="muscle-value" type="text"></th><th><button class="button new-lift">New Lift</button></th><th><button class="button save-lifts">Save</button></th></tr></thead><thead><tr><th>Exercises</th><th>Sets</th><th>Reps</th></tr></thead><tbody class="exercises-table"></tbody></table><table class="results"><thead><tr><th class="date"><input type="date"></th><th><button class="button new-row">New Row</button></th><th><button class="button save-results">Save</button></th></tr></thead><thead><tr><th>Weight</th><th>Sets</th><th>Reps</th></tr></thead><tbody class="results-table"></tbody></table>';
 
   // append div to div.week
   weekDiv.appendChild(div);
@@ -92,7 +92,7 @@ function tables() {
 
   // UI Variables for Results Table
   let newRowButton = document.querySelector(".new-row");
-  let resultsButton = document.querySelector(".results");
+  let saveResultsButton = document.querySelector(".save-results");
   let resultsTable = document.querySelector(".results-table");
 
   // load event listeners for table buttons
@@ -112,9 +112,9 @@ function tables() {
     // add new row to results table
     newRowButton.addEventListener("click", addRow);
     // save results in local storage
-    resultsButton.addEventListener("click", addResult);
+    saveResultsButton.addEventListener("click", addResult);
     // save date in local storage
-    resultsButton.addEventListener("click", addDate);
+    saveResultsButton.addEventListener("click", addDate);
   }
 
   // ==================================================================================
