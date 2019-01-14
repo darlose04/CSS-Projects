@@ -38,7 +38,7 @@ function getDays() {
       } else {
         muscles = JSON.parse(localStorage.getItem("muscles"));
 
-        const muscleGroup = document.querySelector(".muscle-group");
+        const muscleGroup = document.querySelector(".muscle-group-saved");
 
         for (let i = 0; i < muscles.length; i++) {
           muscleGroup.innerText = muscles[i];
@@ -72,7 +72,7 @@ function putDayInLocalStorage(e) {
   div.className = "day";
   // add div inner html
   div.innerHTML =
-    '<table class="exercises"><thead><tr><th class="muscle-group"><input class="muscle-value" type="text"></th></tr></thead><thead><tr><th>Exercises</th><th>Sets</th><th>Reps</th></tr></thead><tbody></tbody></table><table class="results"><thead><tr><th class="date"><input type="date"></th></tr></thead><thead><tr><th>Weight</th><th>Sets</th><th>Reps</th></tr></thead><tbody></tbody></table>';
+    '<table class="exercises"><thead><tr><th class="muscle-group-saved"><input class="muscle-value" type="text"></th></tr></thead><thead><tr><th>Exercises</th><th>Sets</th><th>Reps</th></tr></thead><tbody></tbody></table><table class="results"><thead><tr><th class="date"><input type="date"></th></tr></thead><thead><tr><th>Weight</th><th>Sets</th><th>Reps</th></tr></thead><tbody></tbody></table>';
 
   saveDaysInLocalStorage(div.innerHTML);
 
