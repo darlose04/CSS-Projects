@@ -30,6 +30,20 @@ function getDays() {
       let div = document.createElement("div");
       div.innerHTML = days[i];
       weekDiv.appendChild(div);
+      
+      // Get the muscle group description for each day
+      let muscles;
+      if (localStorage.getItem("muscles") === null) {
+        muscles = [];
+      } else {
+        muscles = JSON.parse(localStorage.getItem("muscles"));
+
+        const muscleGroup = document.querySelector(".muscle-group");
+
+        for (let i = 0; i < muscles.length; i++) {
+          muscleGroup.innerText = muscles[i];
+        }
+      }
     }
   }
 }
