@@ -102,7 +102,12 @@ function tables() {
   function loadTableEventListeners() {
     // add new row to exercises table
     newLiftButton.addEventListener("click", addLift);
+    // save lifts inputs in local storage
+    saveLiftsButton.addEventListener("click", saveLift);
+
+    // add new row to results table
     newRowButton.addEventListener("click", addRow);
+
   }
 
   // add new lift row to table.exercises
