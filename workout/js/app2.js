@@ -104,10 +104,16 @@ function tables() {
     newLiftButton.addEventListener("click", addLift);
     // save lifts inputs in local storage
     saveLiftsButton.addEventListener("click", saveLift);
+    // save muscle group description in local storage
+    saveLiftsButton.addEventListener("click", addMuscle);
 
     // add new row to results table
     newRowButton.addEventListener("click", addRow);
   }
+
+  // ==================================================================================
+  // The below JS is for the exercises table
+  // ==================================================================================
 
   // add new lift row to table.exercises
   function addLift(e) {
@@ -172,7 +178,7 @@ function tables() {
   }
 
   // ==================================================================================
-  // The below JS is for the results table, the above is for the exercises table
+  // The below JS is for the results table
   // ==================================================================================
 
   // add new results row to table.results
@@ -186,5 +192,19 @@ function tables() {
     resultsTable.appendChild(tr);
 
     e.preventDefault();
+  }
+
+  // save the date of the workout in local storage
+  function saveDateInLocalStorage(date) {
+    let dates;
+    if (localStorage.getItem("dates") === null) {
+      dates = [];
+    } else {
+      dates = JSON.parse(localStorage.getItem("dates"));
+    }
+
+    dates.push(date);
+
+    localStorage.setItem("dates", JSON.stringify(dates));
   }
 }
