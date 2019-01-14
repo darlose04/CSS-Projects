@@ -96,7 +96,7 @@
     width: 100%;
   }  
 
-  .muscle-group {
+  .muscle-group, .muscle-group-saved {
     background-color: #4682DD;
     color: white;
   }
