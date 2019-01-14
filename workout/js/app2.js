@@ -30,32 +30,32 @@ function getDays() {
       let div = document.createElement("div");
       div.innerHTML = days[i];
       weekDiv.appendChild(div);
-    }
-    // Get the muscle group description for each day
-    let muscles;
-    if (localStorage.getItem("muscles") === null) {
-      muscles = [];
-    } else {
-      muscles = JSON.parse(localStorage.getItem("muscles"));
 
-      for (let i = 0; i < muscles.length; i++) {
-        const muscleGroup = document.querySelector(".muscle-group-saved");
-        muscleGroup.innerText = muscles[i];
-        console.log(muscles[i]);
+      // Get the muscle group description for each day
+      let muscles;
+      if (localStorage.getItem("muscles") === null) {
+        muscles = [];
+      } else {
+        muscles = JSON.parse(localStorage.getItem("muscles"));
+
+        for (let i = 0; i < muscles.length; i++) {
+          let muscleGroup = document.querySelector(".muscle-group-saved");
+          muscleGroup.innerText = muscles[i];
+          console.log(muscles[i]);
+        }
       }
-    }
 
-    // get the dates for each day
-    let dates;
-    if (localStorage.getItem("dates") === null) {
-      dates = [];
-    } else {
-      dates = JSON.parse(localStorage.getItem("dates"));
+      // get the dates for each day
+      let dates;
+      if (localStorage.getItem("dates") === null) {
+        dates = [];
+      } else {
+        dates = JSON.parse(localStorage.getItem("dates"));
 
-      const liftDate = document.querySelector(".date");
-
-      for (let i = 0; i < dates.length; i++) {
-        liftDate.innerText = dates[i];
+        for (let i = 0; i < dates.length; i++) {
+          let liftDate = document.querySelector(".date");
+          liftDate.innerText = dates[i];
+        }
       }
     }
   }
