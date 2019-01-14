@@ -7,6 +7,8 @@ let weekDiv = document.querySelector(".week");
 loadEventListeners();
 
 function loadEventListeners() {
+  // DOM load event
+  document.addEventListener("DOMContentLoaded", getDays);
   // adds new tables to page with click of button
   newDayButton.addEventListener("click", () => {
     addNewDay();
@@ -14,6 +16,22 @@ function loadEventListeners() {
   });
 
   saveDayButton.addEventListener("click", putDayInLocalStorage);
+}
+
+// get the tables from local storage
+function getDays() {
+  let days;
+  if (localStorage.getItem("days") === null) {
+    days = [];
+  } else {
+    days = JSON.parse(localStorage.getItem("days"));
+
+    for (let i = 0; i < days.length; i++) {
+      let div = document.createElement("div");
+      div.innerHTML = days[i];
+      weekDiv.appendChild(div);
+    }
+  }
 }
 
 // add new exercises and results tables to page  (through event listener click)
