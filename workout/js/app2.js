@@ -194,7 +194,33 @@ function tables() {
     e.preventDefault();
   }
 
-  // add date and put it in local storage
+  // Add results
+  function addResult(e) {
+    // create variable for input values
+    const inputs = document.querySelectorAll(".result-input");
+    // store in local storage
+    for (let i = 0; i < inputs.length; i++) {
+      storeResultInLocalStorage(inputs[i].value);
+    }
+
+    e.preventDefault();
+  }
+
+  // store results from workout in local storage
+  function storeResultInLocalStorage(result) {
+    let results;
+    if (localStorage.getItem("results") === null) {
+      results = [];
+    } else {
+      results = JSON.parse(localStorage.getItem("results"));
+    }
+
+    results.push(result);
+
+    localStorage.setItem("results", JSON.stringify(results));
+  }
+
+  // add date and put it in local storage when save button is clicked
   function addDate(e) {
     // create variable for date value
     const liftDate = document.querySelector("input[type='date']");
