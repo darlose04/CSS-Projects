@@ -107,7 +107,6 @@ function tables() {
 
     // add new row to results table
     newRowButton.addEventListener("click", addRow);
-
   }
 
   // add new lift row to table.exercises
@@ -148,6 +147,33 @@ function tables() {
 
     localStorage.setItem("lifts", JSON.stringify(lifts));
   }
+
+  // add muscle group description and put it in local storage
+  function addMuscle(e) {
+    // create variable for muscle group value
+    const muscleGroup = document.querySelector(".muscle-value");
+    storeMuscleInLocalStorage(muscleGroup.value);
+
+    e.preventDefault();
+  }
+
+  // store muscle group description in local storage
+  function storeMuscleInLocalStorage(muscle) {
+    let muscles;
+    if (localStorage.getItem("muscles") === null) {
+      muscles = [];
+    } else {
+      muscles = JSON.parse(localStorage.getItem("muscles"));
+    }
+
+    muscles.push(muscle);
+
+    localStorage.setItem("muscles", JSON.stringify(muscles));
+  }
+
+  // ==================================================================================
+  // The below JS is for the results table, the above is for the exercises table
+  // ==================================================================================
 
   // add new results row to table.results
   function addRow(e) {
