@@ -1,2 +1,2 @@
-# CSS-Projects
-Projects using Flexbox, Grid, Bootstrap, and JavaScript
+# Front End
+Projects using HTML, CSS, Flexbox, Grid, Bootstrap, and JavaScript
